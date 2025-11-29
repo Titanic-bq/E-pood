@@ -38,7 +38,20 @@ class Cart {
   removeProduct(productId) {
     this.items = this.items.filter((item) => item.product.id !== productId);
   }
-  calculateTotal() {}
+  calculateTotal() {
+    return this.items.reduce(
+      (sum, item) => sum + item.product.price * item.quantity,
+      0
+    );
+  }
 
-  totalItems() {}
+  totalItems() {
+    return this.items.reduce((sum, item) => sum + item.quantity, 0);
+  }
 }
+const cart = new Cart();
+
+cart.addProduct(laptop, 2);
+
+console.log(cart.calculateTotal());
+console.log(cart.totalItems);
