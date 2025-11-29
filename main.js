@@ -51,7 +51,7 @@ class Cart {
 }
 const cart = new Cart();
 
-cart.addProduct(laptop, 2);
+cart.addProduct(laptop, 3);
 
 console.log(cart.calculateTotal());
 console.log(cart.totalItems);
