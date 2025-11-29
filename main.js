@@ -9,10 +9,6 @@ class Product {
   describe() {
     return `${this.title} (${this.category}) - price: ${this.price} €`;
   }
-
-  static discountedPrice(price, discountPercent) {
-    return price - price * (discountPercent / 100);
-  }
 }
 
 const laptop = new Product(1, "Sülearvuti", 999.99, "Elektroonika");
