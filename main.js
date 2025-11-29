@@ -15,7 +15,7 @@ class Product {
     return price - price * (discountPercent / 100);
   }
 }
-const laptop = new Product(1, "Sülearvuti", 999.99, "Elektroonika");
+const laptop = new Product(1, "Sülearvuti", 79.55, "Elektroonika");
 
 console.log(laptop.describe());
 console.log(Product.discountedPrice(laptop.price, 10));
@@ -35,8 +35,9 @@ class Cart {
       this.items.push({ product, quantity });
     }
   }
-  removeProduct(productId) {}
-
+  removeProduct(productId) {
+    this.items = this.items.filter((item) => item.product.id !== productId);
+  }
   calculateTotal() {}
 
   totalItems() {}
