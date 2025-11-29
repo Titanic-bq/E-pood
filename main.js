@@ -1,6 +1,5 @@
 //Product klass
 
-
 class Product {
   constructor(id, title, price, category) {
     this.id = id;
@@ -21,7 +20,6 @@ const laptop = new Product(1, "Sülearvuti", 999.99, "Elektroonika");
 console.log(laptop.describe());
 console.log(Product.discountedPrice(laptop.price, 10));
 
-
 //Cart klass
 
 class Cart {
@@ -29,14 +27,17 @@ class Cart {
     this.items = [];
   }
 
-    addProduct(product, quantity) {
-
-     }
-    removeProduct(productId) {
+  addProduct(product, quantity) {
+    const existing = this.items.find((item) => item.product.id === product.id);
+    if (existing) {
+      existing.quantity += quantity;
+    } else {
+      this.items.push({ product, quantity });
     }
+  }
+  removeProduct(productId) {}
 
-     calculateTotal() {
-    }
+  calculateTotal() {}
 
-    totalItems() {
-    }
+  totalItems() {}
+}
