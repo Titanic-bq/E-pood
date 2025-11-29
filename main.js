@@ -55,3 +55,11 @@ cart.addProduct(laptop, 3);
 
 console.log(cart.calculateTotal());
 console.log(cart.totalItems);
+
+//Order klass
+
+class Order {
+    constructor(cart) {
+        this.orderDate = new Date();
+        this.cart = cart;
+    }
