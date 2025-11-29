@@ -13,7 +13,6 @@ class Product {
     return price - price * (discountPercent / 100);
   }
 }
-
 const laptop = new Product(1, "Sülearvuti", 999.99, "Elektroonika");
 
 console.log(laptop.describe());
