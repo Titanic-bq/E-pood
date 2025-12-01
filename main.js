@@ -44,12 +44,6 @@ class Cart {
     return this.items.reduce((sum, item) => sum + item.quantity, 0);
   }
 }
-const cart = new Cart();
-
-cart.addProduct(laptop, 3);
-
-console.log(cart.calculateTotal());
-console.log(cart.totalItems);
 
 //Order klass
 
@@ -78,3 +72,9 @@ const laptop = new Product(1, "Sülearvuti", 79.55, "Elektroonika");
 
 console.log(laptop.describe());
 console.log(Product.discountedPrice(laptop.price, 10));
+const cart = new Cart();
+
+cart.addProduct(laptop, 2);
+
+console.log(cart.calculateTotal());
+console.log(cart.totalItems);
