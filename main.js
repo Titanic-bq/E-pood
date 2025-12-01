@@ -101,3 +101,10 @@ cart.addProduct(laptop, 2);
 
 console.log(cart.calculateTotal());
 console.log(cart.totalItems);
+
+const order = new Order(cart);
+order.printOrder();
+
+const customer = new Customer("Alice");
+customer.placeOrder(cart);
+customer.printOrderHistory();
