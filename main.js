@@ -15,11 +15,6 @@ class Product {
     return price - price * (discountPercent / 100);
   }
 }
-const laptop = new Product(1, "Sülearvuti", 79.55, "Elektroonika");
-
-console.log(laptop.describe());
-console.log(Product.discountedPrice(laptop.price, 10));
-
 //Cart klass
 
 class Cart {
@@ -78,3 +73,8 @@ class Order {
     console.log("Kogusumma:", this.cart.calculateTotal() + "€");
   }
 }
+
+const laptop = new Product(1, "Sülearvuti", 79.55, "Elektroonika");
+
+console.log(laptop.describe());
+console.log(Product.discountedPrice(laptop.price, 10));
