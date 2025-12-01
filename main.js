@@ -68,6 +68,29 @@ class Order {
   }
 }
 
+class Customer {
+  constructor(name) {
+    this.name = name;
+    this.orderHistory = [];
+  }
+
+  placeOrder(cart) {
+    const newOrder = new Order(cart);
+    this.orderHistory.push(newOrder);
+  }
+
+  printOrderHistory() {
+    console.log(`Kliendi ${this.name} tellimuste ajalugu:`);
+
+    this.orderHistory.forEach((order, index) => {
+      console.log(
+        `${index + 1}. Tellitud: ${order.orderDate.toLocaleString()}, ` +
+          `kogusumma: ${order.cart.calculateTotal()}€`
+      );
+    });
+  }
+}
+
 const laptop = new Product(1, "Sülearvuti", 79.55, "Elektroonika");
 
 console.log(laptop.describe());
