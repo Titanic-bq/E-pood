@@ -1,95 +1,38 @@
-//Product klass
+import { Product } from "./constructors/Product.js";
 
-class Product {
-  constructor(id, title, price, category) {
-    this.id = id;
-    this.title = title;
-    this.price = price;
-    this.category = category;
-  }
+import { Cart } from "./constructors/Cart.js";
 
-  describe() {
-    return `${this.title} (${this.category}) - price: ${this.price} €`;
-  }
-  static discountedPrice(price, discountPercent) {
-    return price - price * (discountPercent / 100);
-  }
-}
-//Cart klass
+import { Customer } from "./constructors/Customer.js";
 
-class Cart {
-  constructor() {
-    this.items = [];
-  }
+// Loo mõned tooted
 
-  addProduct(product, quantity) {
-    const existing = this.items.find((item) => item.product.id === product.id);
-    if (existing) {
-      existing.quantity += quantity;
-    } else {
-      this.items.push({ product, quantity });
-    }
-  }
-  removeProduct(productId) {
-    this.items = this.items.filter((item) => item.product.id !== productId);
-  }
-  calculateTotal() {
-    return this.items.reduce(
-      (sum, item) => sum + item.product.price * item.quantity,
-      0
-    );
-  }
+const laptop = new Product(1, "Sülearvuti", 999.99, "Elektroonika");
 
-  get totalItems() {
-    return this.items.reduce((sum, item) => sum + item.quantity, 0);
-  }
-}
+const phone = new Product(2, "Telefon", 599.99, "Elektroonika");
 
-//Order klass
+// Loo ostukorv ja lisa tooted
 
-class Order {
-  constructor(cart) {
-    this.orderDate = new Date();
-    this.cart = cart;
-  }
-  printOrder() {
-    console.log("Tellimuse kuupäev:", this.orderDate.toLocaleString());
-    console.log("Tooted:");
+const cart = new Cart();
 
-    this.cart.items.forEach((item) => {
-      console.log(
-        `- ${item.product.title} x ${item.quantity} = ${
-          item.product.price * item.quantity
-        }€`
-      );
-    });
+cart.addProduct(laptop, 1);
 
-    console.log("Kogusumma:", this.cart.calculateTotal() + "€");
-  }
-}
+cart.addProduct(phone, 2);
 
-class Customer {
-  constructor(name) {
-    this.name = name;
-    this.orderHistory = [];
-  }
+// Kuvage ostukorvi summa ja toodete arv
 
-  placeOrder(cart) {
-    const newOrder = new Order(cart);
-    this.orderHistory.push(newOrder);
-  }
+console.log("Kogusumma:", cart.calculateTotal());
 
-  printOrderHistory() {
-    console.log(`Kliendi ${this.name} tellimuste ajalugu:`);
+console.log("Kokku tooteid ostukorvis:", cart.totalItems);
 
-    this.orderHistory.forEach((order, index) => {
-      console.log(
-        `${index + 1}. Tellitud: ${order.orderDate.toLocaleString()}, ` +
-          `kogusumma: ${order.cart.calculateTotal()}€`
-      );
-    });
-  }
-}
+// Loo klient ja esita tellimus
+
+const customer = new Customer("Alice");
+
+customer.placeOrder(cart);
+
+// Kuvage tellimuste ajalugu
+
+customer.printOrderHistory();
 
 const laptop = new Product(1, "Sülearvuti", 79.55, "Elektroonika");
 
