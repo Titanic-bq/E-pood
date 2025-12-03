@@ -1,53 +1,17 @@
 import { Product } from "./constructors/Product.js";
 
-import { Cart } from "./constructors/Cart.js";
+import { displayAllProductsView } from "./constructors/Cart.js";
 
-import { Customer } from "./constructors/Customer.js";
+const products = [
+  new Product(1, "Sülearvuti", 45.99, "Elektroonika"),
+  new Product(2, "Hiirepadi", 5.99, "Elektroonika"),
+  new Product(3, "Kohvimasin", 89.99, "Köök"),
+  new Product(4, "Raamat: JavaScript", 15.49, "Raamatud"),
+  new Product(5, "Jalgratas", 120.0, "Sport"),
+];
 
-// Loo mõned tooted
+const initApp = () => {
+  displayAllProductsView(products);
+};
 
-const laptop = new Product(1, "Sülearvuti", 999.99, "Elektroonika");
-
-const phone = new Product(2, "Telefon", 599.99, "Elektroonika");
-
-// Loo ostukorv ja lisa tooted
-
-const cart = new Cart();
-
-cart.addProduct(laptop, 1);
-
-cart.addProduct(phone, 2);
-
-// Kuvage ostukorvi summa ja toodete arv
-
-console.log("Kogusumma:", cart.calculateTotal());
-
-console.log("Kokku tooteid ostukorvis:", cart.totalItems);
-
-// Loo klient ja esita tellimus
-
-const customer = new Customer("Alice");
-
-customer.placeOrder(cart);
-
-// Kuvage tellimuste ajalugu
-
-customer.printOrderHistory();
-
-const laptop = new Product(1, "Sülearvuti", 79.55, "Elektroonika");
-
-console.log(laptop.describe());
-console.log(Product.discountedPrice(laptop.price, 10));
-const cart = new Cart();
-
-cart.addProduct(laptop, 2);
-
-console.log(cart.calculateTotal());
-console.log(cart.totalItems);
-
-const order = new Order(cart);
-order.printOrder();
-
-const customer = new Customer("Alice");
-customer.placeOrder(cart);
-customer.printOrderHistory();
+document.addEventListener("DOMContentLoaded", initApp);
