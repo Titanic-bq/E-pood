@@ -1,6 +1,6 @@
-import { Product } from "./constructors/Product.js";
+import { Product } from "./constructors/product.js";
 
-import { displayAllProductsView } from "./constructors/Cart.js";
+import { displayAllProductsView } from "./constructors/cart.js";
 
 const products = [
   new Product(1, "Sülearvuti", 45.99, "Elektroonika"),
