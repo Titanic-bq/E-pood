@@ -1,6 +1,6 @@
 import { Product } from "./constructors/product.js";
 
-import { displayAllProductsView } from "./constructors/cart.js";
+import { displayAllProductsView } from "./views/allProductsView.js";
 
 const products = [
   new Product(1, "Sülearvuti", 45.99, "Elektroonika"),
