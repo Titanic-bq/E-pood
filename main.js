@@ -1,5 +1,4 @@
 import { Product } from "./constructors/product.js";
-import { cartConstructor } from "./constructors/cart.js";
 import { displayCartView } from "./views/cartView.js";
 import { displayFavoritesView } from "./views/favoritesView.js";
 import { displayProductsDetailView } from "./views/productDetailView.js";
