@@ -1,5 +1,8 @@
 import { Product } from "./constructors/product.js";
-
+import { cartConstructor } from "./constructors/cart.js";
+import { displayCartView } from "./views/cartView.js";
+import { displayFavoritesView } from "./views/favoritesView.js";
+import { displayProductsDetailView } from "./views/productDetailView.js";
 import { displayAllProductsView } from "./views/allProductsView.js";
 
 const products = [
@@ -10,7 +13,10 @@ const products = [
   new Product(5, "Jalgratas", 120.0, "Sport"),
 ];
 
-const initApp = () => {
+cartConstructor.addproduct(products[0], 2);
+cartConstructor.addproduct(products[2], 1);
+
+const initApp = async () => {
   displayAllProductsView(products);
   displayProductsDetailView(products[1]);
   displayCartView();
