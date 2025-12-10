@@ -11,7 +11,8 @@ const products = [
 ];
 
 const initApp = () => {
-  displayAllProductsView(products);
+  displayAllProductsView(products[1]);
+  displaProductsDetailView(products);
 };
 
 document.addEventListener("DOMContentLoaded", initApp);

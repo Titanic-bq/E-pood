@@ -23,5 +23,5 @@ export const displayAllProductsView = (products) => {
     productsContainer.appendChild(productCard);
   });
 
-  container.appendChild(productsContainer);
+  container.append(productsContainer);
 };
