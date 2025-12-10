@@ -1,4 +1,4 @@
-import { customreConstructor } from "../constructors/customer.js";
+import { customreConstructor } from "../constructors/Customer.js";
 export const displayFavoriteProductsView = () => {
   const favorites = customreConstructor.getAllFavorites();
   const container = document.getElementById("main-container");

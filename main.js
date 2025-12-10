@@ -11,8 +11,10 @@ const products = [
 ];
 
 const initApp = () => {
-  displayAllProductsView(products[1]);
-  displaProductsDetailView(products);
+  displayAllProductsView(products);
+  displayProductsDetailView(products[1]);
+  displayCartView();
+  displayFavoritesView();
 };
 
 document.addEventListener("DOMContentLoaded", initApp);
