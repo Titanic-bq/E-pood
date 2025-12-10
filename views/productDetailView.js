@@ -10,6 +10,9 @@ export const displayAllProductsView = (product) => {
         <p>Kategooria: ${product.category}</p>
         <p>Hind: €${product.price}</p>
         <p>Toote ID: ${product.id}</p>
+        <p>Kirjeldus: ${product.description}</p>
+        <p>Laoseis: ${product.stock} tk</p>
+        <p>Tootja: ${product.manufacturer}</p>
     `;
 
   customer.append(productCard);
