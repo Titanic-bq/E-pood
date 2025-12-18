@@ -18,10 +18,14 @@ cartConstructor.addproduct(products[0], 2);
 cartConstructor.addproduct(products[2], 1);
 
 const initApp = async () => {
-  displayAllProductsView(products);
-  displayProductsDetailView(products[1]);
-  displayCartView();
-  displayFavoritesView();
+  const homeButton = document.getElementById("home-button");
+  hommebutton.onclick = () => initApp();
+
+  const favoritesButton = document.getElementById("favorites-button");
+  favoritesButton.onclick = () => navigate("favorites");
+
+  const cartButton = document.getElementById("cart-button");
+  cartButton.onclick = () => navigate("cart");
 
   const products = await getProductsDataFromJson();
   displayAllProductsView(products);
