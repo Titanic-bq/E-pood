@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "nimi": "Sülearvuti",
+    "hind": 45.99,
+    "kategooria": "Elektroonika"
+  },
+  { "id": 2, "nimi": "Hiirepadi", "hind": 5.99, "kategooria": "Elektroonika" },
+  { "id": 3, "nimi": "Kohvimasin", "hind": 89.99, "kategooria": "Köök" },
+  {
+    "id": 4,
+    "nimi": "Raamat: JavaScript",
+    "hind": 15.49,
+    "kategooria": "Raamatud"
+  },
+  { "id": 5, "nimi": "Jalgratas", "hind": 120.0, "kategooria": "Sport" }
+]
