@@ -6,6 +6,7 @@
     "kategooria": "Elektroonika"
   },
   { "id": 2, "nimi": "Hiirepadi", "hind": 5.99, "kategooria": "Elektroonika" },
+
   { "id": 3, "nimi": "Kohvimasin", "hind": 89.99, "kategooria": "Köök" },
   {
     "id": 4,
@@ -13,5 +14,9 @@
     "hind": 15.49,
     "kategooria": "Raamatud"
   },
-  { "id": 5, "nimi": "Jalgratas", "hind": 120.0, "kategooria": "Sport" }
+  { "id": 5, "nimi": "Jalgratas", "hind": 120.0, "kategooria": "Sport" },
+
+  { "id": 6, "nimi": "T-särk", "hind": 9.99, "kategooria": "Riided" },
+
+  { "id": 7, "nimi": "Kõrvaklapid", "hind": 25.0, "kategooria": "Elektroonika" }
 ]
