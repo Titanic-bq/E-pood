@@ -3,18 +3,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-pood</title>
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header class="header">
-      <h1>E-pood</h1>
+    <header>
+      <h1 id="logo">Minu E-Pood</h1>
+      <nav>
+        <button id="productsBtn">Tooted</button>
+        <button id="cartBtn">Ostukorv (<span id="cartCount">0</span>)</button>
+        <button id="favoritesBtn">Lemmikud</button>
+      </nav>
     </header>
-    <main>
-      <section>
-        <div id="products-container"></div>
-      </section>
-    </main>
-    <h1>Tere tulemast e-poodi</h1>
-    <div id="output"></div>
-    <script type="module" src="main.js"></script>
+
+    <main id="app"></main>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
