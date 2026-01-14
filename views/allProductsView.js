@@ -17,15 +17,20 @@ export const displayAllProductsView = (products) => {
             <h3>${product.title}</h3>
             <p>Hind: €${product.price}</p>
             <p>Kategooria: ${product.category}</p>
-            <button class="favorites">Lisa lemmikutesse</button>
+            <button id="favorites-${product.id}" class="favorites">${
+      customerConstructor.isFavorite(product.id)
+        ? "Eemalda lemmikutest"
+        : "Lisa lemmikutesse"
+    }</button>
         `;
 
     const cartButton = document.createElement("button");
     cartButton.textContent = "Lisa ostukorvi";
+    cartButton.onclick = (e) => {
+      e.stopPropagation();
+      cartConstructor.addProduct(product);
+    };
 
-    productCard.appendChild(cartButton);
-    productsContainer.appendChild(productCard);
+    container.append(productsContainer);
   });
-
-  container.append(productsContainer);
 };

@@ -1,5 +1,5 @@
-import { cartConstructor } from "../constructors/Cart.js";
-import { customerConstructor } from "../constructors/Customer.js";
+import { cartConstructor } from "../constructors/cart.js";
+import { customerConstructor } from "../constructors/customer.js";
 
 //Ostukorvi vaate genereerimine
 export const displayCartView = () => {

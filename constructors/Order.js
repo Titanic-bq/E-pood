@@ -1,4 +1,4 @@
-import { cartConstructor } from "./Cart.js";
+import { cartConstructor } from "./cart.js";
 
 // Order.js
 export class Order {
