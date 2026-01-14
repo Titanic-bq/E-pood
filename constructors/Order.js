@@ -1,4 +1,4 @@
-class Order {
+export class Order {
   constructor(cart) {
     this.orderDate = new Date();
     this.cart = cart;

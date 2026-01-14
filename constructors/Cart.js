@@ -1,4 +1,4 @@
-class Cart {
+export class Cart {
   constructor() {
     this.items = [];
   }

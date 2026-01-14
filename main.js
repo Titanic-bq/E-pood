@@ -1,36 +1,29 @@
 import { Product } from "./constructors/product.js";
-import { Cart } from "./constructors/cart.js";
-import { displayCartView } from "./views/cartView.js";
-import { displayFavoriteProductsView } from "./views/favoritesView.js";
-import { displayProductDetailView } from "./views/productDetailView.js";
 import { displayAllProductsView } from "./views/allProductsView.js";
-import { getProductsDataFromJson } from "./api.js";
-const products = [
-  new Product(1, "Sülearvuti", 45.99, "Elektroonika"),
-  new Product(2, "Hiirepadi", 5.99, "Elektroonika"),
-  new Product(3, "Kohvimasin", 89.99, "Köök"),
-  new Product(4, "Raamat: JavaScript", 15.49, "Raamatud"),
-  new Product(5, "Jalgratas", 120.0, "Sport"),
-  new Product(6, "T-särk", 9.99, "Riided"),
-  new Product(7, "Kõrvaklapid", 25.0, "Elektroonika"),
-];
-
-const cart = new Cart();
-cart.addProduct(products[0], 2);
-cart.addProduct(products[2], 1);
+import { getProductsDataFromJson, getAllCategory } from "./api.js";
+import { navigate } from "./router.js";
 
 const initApp = async () => {
   const homeButton = document.getElementById("home-button");
-  homeButton.onclick = () => initApp();
+  homeButton.onclick = () => navigate("allProducts");
 
   const favoritesButton = document.getElementById("favorites-button");
-  favoritesButton.onclick = () => displayFavoriteProductsView();
+  favoritesButton.onclick = () => navigate("favorites");
 
   const cartButton = document.getElementById("cart-button");
-  cartButton.onclick = () => displayCartView(cart);
+  cartButton.onclick = () => navigate("cart");
 
-  const allProducts = await getProductsDataFromJson();
-  displayAllProductsView(allProducts);
+  const categories = await getAllCategory();
+  const categoryMenu = document.getElementById("categories");
+
+  categories.forEach((category) => {
+    const categoryElement = document.createElement("li");
+    categoryElement.textContent = category;
+    categoryElement.onclick = () => navigate("category", category);
+    categoryMenu.appendChild(categoryElement);
+  });
 };
+
+displayAllProductsView();
 
 document.addEventListener("DOMContentLoaded", initApp);

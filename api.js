@@ -20,3 +20,11 @@ export const getProductsDataFromJson = async () => {
     console.error("Error fetching products:", error);
   }
 };
+export const getAllCategory = async () => {
+  try {
+    const data = await fetch(`${BASE_URL}/products/categories`);
+    return data.json();
+  } catch (error) {
+    console.error(error);
+  }
+};

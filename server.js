@@ -15,4 +15,5 @@ app.get("/api/products", (req, res) => {
     res.status(500).json({ error: "Failed to load products" });
   }
 });
+
 app.listen(8000, () => console.log("Server is running on port 8000"));
