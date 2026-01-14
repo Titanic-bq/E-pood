@@ -1,10 +1,10 @@
-import { cartConstructor } from "../constructors/Cart.js";
+import { cartConstructor } from "../constructors/cart.js";
 
-export const displayCartView = (cart) => {
+export const displayCartView = (cartParam) => {
   const container = document.getElementById("cart-view");
   container.innerHTML = "<h2>Ostukorv</h2>";
 
-  const cart = cartConstructor.getAllProducts();
+  const cart = cartParam.items;
 
   if (!cart.length) {
     const cartItemElement = document.createElement("p");
@@ -15,7 +15,7 @@ export const displayCartView = (cart) => {
       const cartItemElement = document.createElement("div");
       cartItemElement.classList.add("cart-item");
       cartItemElement.innerHTML = `
-                <h3>${item.product.name}</h3>
+                <h3>${item.product.title}</h3>
                 <p>Kogus: ${item.quantity}</p>
                 <p>Hind: €${(item.product.price * item.quantity).toFixed(2)}</p>
             `;
@@ -23,7 +23,7 @@ export const displayCartView = (cart) => {
     });
 
     const totalElement = document.createElement("h3");
-    totalElement.textContent = `Kokku: €${cartConstructor
+    totalElement.textContent = `Kokku: €${cartParam
       .calculateTotal()
       .toFixed(2)}`;
     container.append(totalElement);

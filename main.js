@@ -1,6 +1,6 @@
 import { Product } from "./constructors/product.js";
 import { displayCartView } from "./views/cartView.js";
-import { displayFavoritesView } from "./views/favoritesView.js";
+import { displayFavoriteProductsView } from "./views/favoritesView.js";
 import { displayProductsDetailView } from "./views/productDetailView.js";
 import { displayAllProductsView } from "./views/allProductsView.js";
 import { getProductsDataFromJson } from "./api.js";

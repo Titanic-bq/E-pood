@@ -1,12 +1,12 @@
-export const displayAllProductsView = (product) => {
+export const displayProductDetailView = (product) => {
   const container = document.getElementById("main-container");
   container.innerHTML = "";
 
   const productDetail = document.createElement("div");
-  productCard.classlist.add("product");
+  productDetail.classList.add("product-detail");
 
-  productCard.innerHTML = `
-        <h2>${product.name}</h2>
+  productDetail.innerHTML = `
+        <h2>${product.title}</h2>
         <p>Kategooria: ${product.category}</p>
         <p>Hind: €${product.price}</p>
         <p>Toote ID: ${product.id}</p>
@@ -15,5 +15,5 @@ export const displayAllProductsView = (product) => {
         <p>Tootja: ${product.manufacturer}</p>
     `;
 
-  customer.append(productCard);
+  container.append(productDetail);
 };
