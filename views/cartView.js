@@ -1,5 +1,3 @@
-import { cartConstructor } from "../constructors/cart.js";
-
 export const displayCartView = (cartParam) => {
   const container = document.getElementById("cart-view");
   container.innerHTML = "<h2>Ostukorv</h2>";

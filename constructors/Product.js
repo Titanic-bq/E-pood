@@ -13,3 +13,5 @@ class Product {
     return price - price * (discountPercent / 100);
   }
 }
+
+export { Product };

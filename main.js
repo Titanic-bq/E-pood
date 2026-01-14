@@ -1,7 +1,8 @@
 import { Product } from "./constructors/product.js";
+import { Cart } from "./constructors/cart.js";
 import { displayCartView } from "./views/cartView.js";
 import { displayFavoriteProductsView } from "./views/favoritesView.js";
-import { displayProductsDetailView } from "./views/productDetailView.js";
+import { displayProductDetailView } from "./views/productDetailView.js";
 import { displayAllProductsView } from "./views/allProductsView.js";
 import { getProductsDataFromJson } from "./api.js";
 const products = [
@@ -14,21 +15,22 @@ const products = [
   new Product(7, "Kõrvaklapid", 25.0, "Elektroonika"),
 ];
 
-cartConstructor.addproduct(products[0], 2);
-cartConstructor.addproduct(products[2], 1);
+const cart = new Cart();
+cart.addProduct(products[0], 2);
+cart.addProduct(products[2], 1);
 
 const initApp = async () => {
   const homeButton = document.getElementById("home-button");
-  hommebutton.onclick = () => initApp();
+  homeButton.onclick = () => initApp();
 
   const favoritesButton = document.getElementById("favorites-button");
-  favoritesButton.onclick = () => navigate("favorites");
+  favoritesButton.onclick = () => displayFavoriteProductsView();
 
   const cartButton = document.getElementById("cart-button");
-  cartButton.onclick = () => navigate("cart");
+  cartButton.onclick = () => displayCartView(cart);
 
-  const products = await getProductsDataFromJson();
-  displayAllProductsView(products);
+  const allProducts = await getProductsDataFromJson();
+  displayAllProductsView(allProducts);
 };
 
 document.addEventListener("DOMContentLoaded", initApp);

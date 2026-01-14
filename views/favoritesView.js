@@ -1,6 +1,5 @@
-import { customerConstructor } from "../constructors/customer.js";
-export const displayFavoriteProductsView = () => {
-  const favorites = customerConstructor.favorites;
+export const displayFavoriteProductsView = (customer) => {
+  const favorites = customer.favorites;
   const container = document.getElementById("main-container");
   container.innerHTML = "<h2>Lemmiktooted</h2>";
 
