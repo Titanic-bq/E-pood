@@ -1,3 +1,7 @@
+import { navigate } from "../router";
+import { customerCunstroctor } from "../constructors/customer.js";
+import { getProductsDatabyCategory } from "../api.js";
+
 export const displayAllProductsView = (products) => {
   const container = document.getElementById("main-container");
 

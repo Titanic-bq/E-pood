@@ -1,6 +1,6 @@
 import { Product } from "./constructors/product.js";
 import { displayAllProductsView } from "./views/allProductsView.js";
-import { getProductsDataFromJson, getAllCategory } from "./api.js";
+import { getAllCategory } from "./api.js";
 import { navigate } from "./router.js";
 
 const initApp = async () => {
