@@ -1,4 +1,4 @@
-import { Product } from "./constructors/product.js";
+import { Product } from "../constructors/product.js";
 
 export const getProductsDataFromJson = async () => {
   try {

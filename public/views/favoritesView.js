@@ -1,4 +1,6 @@
-export const displayFavoriteProductsView = (customer) => {
+import { customerCosntructor } from "../constructors/customer.js";
+
+export const displayFavoriteProductsView = async () => {
   const favorites = customer.favorites;
   const container = document.getElementById("main-container");
   container.innerHTML = "<h2>Lemmiktooted</h2>";

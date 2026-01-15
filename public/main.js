@@ -1,7 +1,7 @@
-import { Product } from "./constructors/product.js";
+import { Product } from "../constructors/product.js";
 import { displayAllProductsView } from "./views/allProductsView.js";
 import { getAllCategory } from "./api.js";
-import { navigate } from "./router.js";
+import { navigate } from "../router.js";
 
 const initApp = async () => {
   const homeButton = document.getElementById("home-button");
