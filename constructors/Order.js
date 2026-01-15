@@ -1,6 +1,5 @@
 import { cartConstructor } from "./cart.js";
 
-// Order.js
 export class Order {
   constructor(cart) {
     this.orderDate = new Date();
