@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "title": "Sülearvuti",
+    "price": 45.99,
+    "category": "Elektroonika",
+    "image": "http://example.com"
+  },
+
+  {
+    "id": 2,
+    "title": "Hiirepadi",
+    "price": 5.99,
+    "category": "Elektroonika",
+    "image": "http://example.com"
+  },
+
+  {
+    "id": 4,
+    "title": "Raamat: JavaScript",
+    "price": 15.49,
+    "category": "Raamatud",
+    "image": "http://example.com"
+  },
+
+  {
+    "id": 5,
+    "title": "Jalgratas",
+    "price": 120.0,
+    "category": "Sport",
+    "image": "http://example.com"
+  },
+
+  {
+    "id": 6,
+    "title": "T-särk",
+    "price": 9.99,
+    "category": "Riided",
+    "image": "http://example.com"
+  },
+
+  {
+    "id": 7,
+    "title": "Kõrvaklapid",
+    "price": 25.0,
+    "category": "Elektroonika",
+    "image": "http://example.com"
+  }
+]

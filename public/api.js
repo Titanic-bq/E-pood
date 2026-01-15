@@ -2,7 +2,7 @@ import { Product } from "../constructors/product.js";
 
 export const getProductsDataFromJson = async () => {
   try {
-    const data = await fetch("./data.json");
+    const data = await fetch("./data/products.json");
     return data.json();
   } catch (error) {
     console.error(error);
