@@ -3,18 +3,18 @@ class Order {
     this.orderDate = new Date();
     this.cart = cart;
   }
+
   printOrder() {
     console.log("Tellimuse kuupäev:", this.orderDate.toLocaleString());
-    console.log("Tooted:");
-
+    console.log("Tooted ostukorvis:");
     this.cart.items.forEach((item) => {
       console.log(
-        `- ${item.product.title} x ${item.quantity} = ${
-          item.product.price * item.quantity
-        }€`
+        `- ${item.product.title} (${item.quantity} tk) - ${item.product.price}€/tk`,
       );
     });
-
     console.log("Kogusumma:", this.cart.calculateTotal() + "€");
+    console.log("Kokku tooteid:", this.cart.totalItems);
   }
 }
+
+export { Order };

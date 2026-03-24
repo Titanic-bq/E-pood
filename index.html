@@ -3,19 +3,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-pood</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header>
-      <h1 id="logo">Minu E-Pood</h1>
-      <nav>
-        <button id="productsBtn">Tooted</button>
-        <button id="cartBtn">Ostukorv (<span id="cartCount">0</span>)</button>
-        <button id="favoritesBtn">Lemmikud</button>
-      </nav>
+    <header class="header">
+      <a href="/products" id="home-link"><h1>E-pood</h1></a>
+      <div id="categories"></div>
+      <div>
+        <button id="favorites-button">Lemmikud</button>
+        <button id="cart-button">
+          Ostukorv <span id="cart-count">0</span>
+        </button>
+      </div>
     </header>
 
-    <main id="app"></main>
-    <script type="module" src="./js/main.js"></script>
+    <main>
+      <section id="main-container"></section>
+      <section id="detailed-view"></section>
+      <section id="cart-view"></section>
+      <section id="favorite-view"></section>
+    </main>
+
+    <div id="output"></div>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
